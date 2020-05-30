@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>G1 Noticías</title>
+
+    <!-- Aqui entra o CSS -->
+    <style>
+        body {
+            background-color: rgb(137, 137, 185);
+            color: brown;  
+            font: normal 25pt Arial;
+        }
+
+        h1 {
+            color: chartreuse;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Karate Kure Kurai!</h1> <!--   h1 é o Titulo    -->
+    <p>Derun derun derun</p> <!--  Paragráfo  -->
+
+
+    <script>
+
+                                                                          //se eu digitar só "number", funciona do mesmo jeito. O JS decide o que será.
+     var n1 = Number.parseInt(window.prompt("Digite um número."));         //parseInt(Função, Base que se refere: 10>Decimal >< 8>Octal >< 2>Binário)
+     var n2 = Number.parseInt(window.prompt("Digite outro número."));  //win.prompt trata tudo como string.
+     var s = n1+n2;
+     window.alert(s);
+
+     var n3 = String(window.prompt("Digite uma palavra."));
+     window.alert("Digitado: "+n3);
+
+
+window.alert(`O numero ${n1} mais o número ${n2} dará "${n3}"`);  //"template string" tem que ser entre crase (acento agudo ao contrário)
+     
+
+
+
+    </script>
+
+
+</body>
+
+</html>

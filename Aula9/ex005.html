@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+
+            background: blue;
+            color: white;
+            font: normal 18pt Arial;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <h1 id="cho">Chohow</h1>
+    <p id="resu">Result </p>
+    <p>Result 2</p>
+
+    <div>Click me</div>
+
+
+
+    <script>
+
+        //  window.document.writeln("ola Mundo");
+
+        var ide = window.document.getElementById('cho');
+        ide.style.color = 'purple'
+
+        var paragrafo = window.document.getElementsByTagName('p')[0];  //Isso vai pegar os parágrafos, dependendo do número.
+        paragrafo.style.background = 'red';
+
+
+    </script>
+
+
+</body>
+
+</html>

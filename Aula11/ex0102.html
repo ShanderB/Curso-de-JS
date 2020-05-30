@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" name="nacionalidade" id="nacionalidade">
+    <input type="button" value="Saber" onclick="saber()">
+    <div id="resultado"></div>
+
+    <script>
+
+        function saber() {
+            var nacionalidade = window.document.getElementById("nacionalidade");
+            var resultado = window.document.getElementById("resultado");
+            var naciona = String(nacionalidade.value);
+
+
+            if (naciona=="BR") {
+                resultado.innerHTML = "BRBR";
+            } else {
+                resultado.innerHTML = "Gringo";
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

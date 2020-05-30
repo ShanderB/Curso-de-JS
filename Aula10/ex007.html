@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Somano numeroz</title>
+
+
+    <style>
+        body {
+            font: normal 14pt Arial;
+        }
+
+        input#numero1 {
+            font: normal 14pt Arial;
+            width: 100px;
+
+        }
+
+        input#numero2 {
+            background: black;
+            color: red;
+            font: normal 14pt Arial;
+            width: 100px;
+        }
+
+        div#res {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Somando</h1>
+    <input type="number" name="numero1" id="numero1">
+    +
+    <input type="number" name="numero2" id="numero2">
+    <input type="button" value="Somar" onclick="somar()">
+
+    <div id="res">Resultado</div>
+
+    <script>
+        function somar() {
+            var numero1 = window.document.getElementById("numero1");
+            var numero2 = window.document.getElementById("numero2");
+            var res = window.document.getElementById("res");
+
+            var resultado = Number.parseFloat(numero1.value) + Number.parseFloat(numero2.value);
+
+            res.innerHTML = `A soma dos valores ${numero1.value} e ${numero2.value} é <strong>${resultado}</strong>`;
+
+        }
+    </script>
+</body>
+
+</html>

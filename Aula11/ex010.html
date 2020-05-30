@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>Multas</h1>
+    Velocidade: <input type="number" name="txtvelocidade" id="velocidade"> Km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">
+
+    </div>
+
+    <script>
+
+        function calcular() {
+            var txtvelocidade = window.document.getElementById("velocidade");
+            var res = window.document.getElementById("res");
+            var vel = Number.parseFloat(txtvelocidade.value);
+            res.innerHTML = `<p>Velocidade atual ${vel}</p>`;
+            if (vel > 60) {
+                res.innerHTML += `Cuidado!`;
+            } else {
+                res.innerHTML += "voa, mlk"
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>
