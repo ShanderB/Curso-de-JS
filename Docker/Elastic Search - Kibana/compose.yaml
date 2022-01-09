@@ -1,0 +1,28 @@
+version: '3'
+services:
+  elasticSearch:
+    container_name: elasticSearch
+    image: elasticsearch:7.16.2
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks: 
+      - elasticNetwork
+    environment:
+      - discovery.type=single-node
+
+  kibana:
+    container_name: kibana
+    image: kibana:7.16.2
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticSearch
+    networks: 
+      - elasticNetwork
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticSearch:9200
+
+networks:
+  elasticNetwork:
+    driver: bridge
