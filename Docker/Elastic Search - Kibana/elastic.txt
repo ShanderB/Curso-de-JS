@@ -1,0 +1,34 @@
+GET /_cat/indices
+
+PUT /test_shander/
+{
+  "mappings":{
+    "properties":{
+      "post_text": { "type": "text" }
+    }
+  }
+}
+
+GET test_shander/_search
+GET test_shander/_doc/1
+
+GET test_shander/_search?q=post_text:sdftest
+get test_shander/_search
+{
+  "query": {
+    "match": {
+      "post_text": "sdftest"
+    }
+  }
+}
+
+DELETE test_shander/
+
+GET test_shander/_mapping
+GET test_shander/_count
+
+POST test_shander/_doc/1
+{  
+  "post_text": "sdftest"
+}
+
