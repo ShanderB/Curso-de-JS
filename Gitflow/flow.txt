@@ -1,0 +1,25 @@
+Main = Aqui é onde temos todo o código de produção. Todas as novas funcionalidades que estamos desenvolvendo, em algum momento, serão mescladas ou associadas a Main.
+
+Staging/Develop = Aqui é onde fica o código do nosso próximo deploy. Isso significa que, como recursos ou funcionalidades, será finalizado e adicionado nesta ramificação para posteriormente passar por mais uma etapa antes de ser associado a uma Main.
+Homologação.
+
+Release = Serve como ponte para fazer o merge da Develop para a Main. Funciona como ambiente de homologação e é removida após realizar os testes e do merge com a Main. Caso haja alguma alteração, ela também deve ser sincronizada com a Develop.
+
+Hotfix = Uma branch criada a partir da Main para realizar correções encontradas no sistema em produção. Quando concluída ela é excluída após realizar o merge com a Branch Main e Develop.
+
+Fature = são branches para o desenvolvimento de uma funcionalidade específica. Elas devem ter o nome iniciado por feature, por exemplo, “feature / payment-system”. É importante saber que essas features branches são criadas sempre a partir da branch Develop. Portanto, quando finalizada, ela é removida após realizar o merge com a Branch Develop.
+
+Bugfix = Uma branch criada a partir da Release para realizar correções encontradas no sistema ainda no momento desenvolvimento, Quando concluída ela é excluída após realizar o merge com a Branch Release
+
+
+          [v0.1]           [v0.2]                            [v0.1]
+Main --------0----------------0---------------------------------0--  Main
+             |       |                                          |
+Hotfix       |\--0--/-\                                         |    Hotfix
+             |         |                                        |
+Release      |         |                                /--0---/-\   Release
+             |         |                                |         |
+Staging/     \---0--0--\-------------0-------------0----/---------0- Staging/Develop 
+Develop          |           |
+                 |           |
+Fature           \-----0-----/                                       Fature
