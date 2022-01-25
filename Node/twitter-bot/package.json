@@ -1,0 +1,22 @@
+{
+  "name": "twitter-bot",
+  "version": "1.0.0",
+  "description": "app.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShanderB/takeTweets.git"
+  },
+  "author": "Shander",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShanderB/takeTweets/issues"
+  },
+  "homepage": "https://github.com/ShanderB/takeTweets#readme",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  }
+}

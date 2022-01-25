@@ -1,0 +1,202 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
+/*.follow{
+	text-align: center;
+	color: rgb(133, 119, 45);
+	text-shadow: 1px 2px 2px rgb(136, 124, 57);;
+}*/
+
+body {
+	background: #000;
+}
+.box-outer {
+	overflow: hidden;
+	margin: 50px auto;
+	width: 400px;
+	height: 100px;
+	
+}
+
+.main_box {
+	width: 400px;
+	height: 100px;
+	position: relative;
+	background: #daa520;
+	border: 5px solid #c79d33;
+}
+.bar {
+	position: absolute;
+	width: 50px;
+	height: 5px;
+	background: rgb(214, 206, 84);
+	transition: all 1s linear;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+.bar.delay {
+	animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
+}
+.top {
+	top: -5px;
+	left: -5px;
+}
+.right {
+	top: 18px;
+	right: -28px;
+	transform: rotate(90deg);
+}
+.bottom {
+	bottom: -5px;
+	left: -5px;
+}
+.left {
+	top: 18px;
+	left: -28px;
+	transform: rotate(90deg);
+}
+
+
+ @-webkit-keyframes h-move {
+ 0% {
+left: 5px;
+}
+100% {
+left: 450px;
+}
+}
+ @keyframes h-move {
+ 0% {
+left: 5px;
+}
+100% {
+left: 450px;
+}
+}
+.top, .bottom {
+	animation-name: h-move;
+	animation-name: h-move;
+}
+ @-webkit-keyframes v-move {
+0% {
+top: -5px;
+}
+100% {
+top:250px;
+}
+}
+ @keyframes v-move {
+ 0% {
+top: -5px;
+}
+100% {
+top:250px;
+}
+}
+.right, .left {
+	-webkit-animation-name: v-move;
+	animation-name: v-move;
+}
+
+
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Luckiest Guy", cursive;
+}
+
+.name {
+  margin: 50;
+  font-size: 45px;
+  text-align: center;
+  position: relative;
+  
+  
+  padding: 0;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0.1em 20px rgba(0, 0, 0, 1), 0.05em -0.03em 0 rgba(0, 0, 0, 1),
+    0.05em 0.005em 0 rgba(0, 0, 0, 1), 0em 0.08em 0 rgba(0, 0, 0, 1),
+    0.05em 0.08em 0 rgba(0, 0, 0, 1), 0px -0.03em 0 rgba(0, 0, 0, 1),
+    -0.03em -0.03em 0 rgba(0, 0, 0, 1), -0.03em 0.08em 0 rgba(0, 0, 0, 1), -0.03em 0 0 rgba(0, 0, 0, 1);
+}
+
+
+
+html {
+
+	text-align: center
+}
+
+body {
+	padding-top: 3em;
+}
+
+.shine, .chrome {
+	font-size: 20px;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+.shine {
+	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, rgb(238, 205, 20))) 0 0 no-repeat;
+	-webkit-background-size: 150px;
+	color: rgba(107, 87, 31, 0.151);
+	-webkit-background-clip: text;
+	-webkit-animation-name: shine;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(175, 115, 4, 0.267);
+
+	/* text-shadow: 0 0px 0px rgba(252, 202, 65, 0.5); */
+
+}
+
+.chrome {
+	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+	background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+	-webkit-background-size: 200px;
+	color: rgba(0, 0, 0, 0.3);
+	-webkit-background-clip: text;
+	-webkit-animation-name: shine;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+@-webkit-keyframes shine {
+	0%, 10% {
+		background-position: -1000px;
+	}
+	20% {
+		background-position: top left;
+	}
+	90% {
+		background-position: top right;
+	}
+	100% {
+		background-position: 1000px;
+	}
+}
