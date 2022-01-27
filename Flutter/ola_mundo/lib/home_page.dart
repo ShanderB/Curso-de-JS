@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ola_mundo/app_controller.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,14 +18,14 @@ class HomePageState extends State<HomePage> {
         title: Text('Home'),
       ),
       body: Container(
-        height: 200,
-        width: 200,
-        color: Colors.black,
         child: Center(
-          child: Container(
-            height: 100,
-            width: 100,
-            color: Colors.green,
+          child: Switch(
+            value: AppController.instance.isDarkMode,
+            onChanged: (value) {
+              setState(() {
+                AppController.instance.changeTheme();
+              });
+            },
           ),
         ),
       ),
