@@ -39,14 +39,30 @@ async function printQuestions () {
   }
   console.log('\n======================================================================================================\n\n')
 
-  console.log(result[0].correct_answer)
+  const correctAnswer = result[0].correct_answer
+  const correctAnswerObject = Object.entries(result[0].correct_answers)
 
-  rl.question('', function (answer) {
-    if (result[0].correct_answer.substring(7, 8) === answer) {
-      console.log('Correct!')
-      result[0].explanation ? console.log(`\n${result[0].explanation}`) : console.log('')
+  console.log(correctAnswer)
+  console.log(result[0].correct_answers)
+
+  rl.question('Resposta: ', function (answer) {
+    if (correctAnswer) {
+      if (result[0].correct_answer.substring(7, 8) === answer) {
+        console.log('Correct!')
+        result[0].explanation ? console.log(`\n${result[0].explanation}`) : console.log('')
+      } else {
+        console.log('Wrong!')
+      }
     } else {
-      console.log('Wrong!')
+      for (let key = 0; key < 6; key++) { // If api return a null value, this will fix.
+        for (let value = 1; value < 2; value++) {
+          const objectKey = correctAnswerObject[key].toString().substring(7, 8)
+          const objectValue = correctAnswerObject[key][value]
+          if (objectKey === answer && objectValue) {
+            console.log('Correct!')
+          }
+        }
+      }
     }
 
     rl.close()
