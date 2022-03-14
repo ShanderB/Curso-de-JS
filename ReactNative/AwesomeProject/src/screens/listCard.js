@@ -90,6 +90,44 @@ export default class ListCard extends React.Component {
                     </Text>
                 </View>
 
+                <Text style={{
+                    fontFamily: 'RobotoRegular',
+                    color: '#a2a2db',
+                    fontSize: 12,
+                }}>
+                    20 Jun, 2021
+                </Text>
+
+                <Text style={{
+                    color: '#a2a2db',
+                    fontSize: 17,
+                    marginRight: -5,
+                    marginVertical: 8
+                }}>
+                    .......................................................
+                </Text>
+
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                }}>
+                    <Text style={{
+                        fontFamily: 'RobotoRegular',
+                        color: '#4b3ca7',
+                        fontSize: 17
+                    }}>
+                        Lorem ipsum
+                    </Text>
+                    <Text style={{
+                        fontFamily: 'RobotoRegular',
+                        color: '#4b3ca7',
+                        fontSize: 17,
+                        paddingLeft: 76
+                    }}>
+                        $400
+                    </Text>
+                </View>
+
             </TouchableOpacity>
         );
     }
