@@ -66,7 +66,28 @@ export default class ListCard extends React.Component {
                    }}>
                         Indonesia
                    </Text>
-                   
+               </View>
+
+               <View style={{
+                   flexDirection:'row',
+                   marginTop: 10,
+                   alignItems: 'center'
+               }}>
+                   <Text style={{
+                       fontFamily:'RobotoRegular',
+                       color: '#522289',
+                       fontSize:16
+                   }}>
+                       09:00 AM
+                   </Text>
+                   <Text style={{
+                       fontFamily:'RobotoRegular',
+                       color: '#522289',
+                       fontSize:16,
+                       paddingLeft: 100
+                   }}>
+                       21:00 PM
+                   </Text>
                </View>
 
            </TouchableOpacity>
