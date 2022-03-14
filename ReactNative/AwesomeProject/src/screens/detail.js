@@ -115,15 +115,13 @@ export default class Detail extends React.Component {
                     marginTop: 60
                 }}>
                     <Icon name='dots-horizontal' color='black' size={32} />
-                    <Image source={require('../images/filter.png')} style={{ marginLeft: 228, width: 20, height: 18 }} />
+                    <Icon name='filter' color='black' size={26} style={{ marginLeft: 380, width: 20, height: 18 }}/>
                 </View>
 
                 <ScrollView
                     showsHorizontalScrollIndicator={false}
                     style={{ marginVertical: 5 }}
                 >
-                    <ListCard onPress={() => { this.setModalVisible(true) }} />
-                    <ListCard onPress={() => { this.setModalVisible(true) }} />
                     <ListCard onPress={() => { this.setModalVisible(true) }} />
 
                     <View>
