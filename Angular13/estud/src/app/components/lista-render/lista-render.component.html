@@ -1,4 +1,7 @@
 <h1>TEstex</h1>
 <div *ngFor="let animal of animais">
-    {{animal.nome}} - {{animal.tipo}}
+    {{animal.nome}}
+    <button (click)="mostrarTipo()">A</button>
+    <div *ngIf="showType">{{animal.tipo}}</div>
+    <br>
 </div>
