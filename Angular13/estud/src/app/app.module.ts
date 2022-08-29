@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FirstComponentComponent } from './components/first-component/first-component.component';
 import { EventEmitterComponent } from './components/event-emitter/event-emitter.component';
 import { ChangeNumberComponent } from './components/change-number/change-number.component';
+import { ListaRenderComponent } from './components/lista-render/lista-render.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponentComponent,
     EventEmitterComponent,
-    ChangeNumberComponent
+    ChangeNumberComponent,
+    ListaRenderComponent
   ],
   imports: [
     BrowserModule,
