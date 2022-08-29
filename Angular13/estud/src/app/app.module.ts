@@ -7,6 +7,7 @@ import { FirstComponentComponent } from './components/first-component/first-comp
 import { EventEmitterComponent } from './components/event-emitter/event-emitter.component';
 import { ChangeNumberComponent } from './components/change-number/change-number.component';
 import { ListaRenderComponent } from './components/lista-render/lista-render.component';
+import { PipesComponent } from './components/pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ListaRenderComponent } from './components/lista-render/lista-render.com
     FirstComponentComponent,
     EventEmitterComponent,
     ChangeNumberComponent,
-    ListaRenderComponent
+    ListaRenderComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
