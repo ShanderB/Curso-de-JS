@@ -1,12 +1,16 @@
 import React, { ObjectHTMLAttributes } from "react";
 import { View, Text } from "react-native";
-
+import styles from "./styleResultIMC";
 export default function ResultIMC(props: Propriedades){
     return(
-        <View>
-            <Text>{props.mensagemResultado}</Text>
-            <Text>{props.result}</Text>
-        </View>
+        <View style={styles.contextImc}>
+        <Text style={styles.titleResultImc}>
+          {props.mensagemResultado}
+        </Text>
+        <Text style={styles.resultImc}>
+          {props.result}
+        </Text>
+      </View>
     )
 }
 
