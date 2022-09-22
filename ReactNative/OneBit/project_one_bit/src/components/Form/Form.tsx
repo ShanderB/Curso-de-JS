@@ -1,13 +1,13 @@
 import React from "react";
-import { View, Text, TextInput, Button } from "react-native";
+import { View, Text, TextInput, Button, TouchableOpacity } from "react-native";
 import { useState } from "react";
 import ResultIMC from "./ResultIMC/ResultIMC";
-
+import styles from "./styleForm";
 export default function Form() {
-    const [height, setHeight] = useState(null)
-    const [weight, setWeight] = useState(null)
+    const [height, setHeight] = useState(undefined)
+    const [weight, setWeight] = useState(undefined)
     const [messageIMC, setMessageIMC] = useState("Preencha o peso e altura")
-    const [imc, setImc] = useState(null)
+    const [imc, setImc] = useState(undefined)
     const [textButton, setTextButton] = useState("Calcular")
 
 
@@ -23,37 +23,41 @@ export default function Form() {
 
         if(localWeight && localHeight){
             imcCalculator();
-            setWeight(null);
-            setHeight(null);
+            setWeight(undefined);
+            setHeight(undefined);
             setMessageIMC("Seu IMC é igual:");
             setTextButton("Calcular Novamente");
             return;
         }
-        setImc(null);
+        setImc(undefined);
         setTextButton("Calcular");
         setMessageIMC("Preencha o peso e a altura")
     }
     
     return (
-        <View>
-            <View>
-                <Text>Altura</Text>
+        <View style={styles.formContext}>
+            <View style={styles.form}>
+                <Text style={styles.formLabel}>Altura</Text>
                 <TextInput
+                    style={styles.input}
                     onChangeText={setHeight}
                     value={height}
                     placeholder="Altura"
                     keyboardType="numeric"
                 ></TextInput>
-                <Text>Peso</Text>
+                <Text style={styles.formLabel}>Peso</Text>
                 <TextInput
+                style={styles.input}
                 onChangeText={setWeight}
                 value={weight}
                     placeholder="Peso"
                     keyboardType="numeric"
                 ></TextInput>
-                <Button  
+                <TouchableOpacity style={styles.buttonCalculator}
                 onPress={() => validator()}
-                title={textButton}></Button>
+                >
+                    <Text style={styles.buttonCalculatorText}>{textButton}</Text>
+                </TouchableOpacity>
             </View>
             <ResultIMC mensagemResultado={messageIMC} result={imc}></ResultIMC>
         </View>
