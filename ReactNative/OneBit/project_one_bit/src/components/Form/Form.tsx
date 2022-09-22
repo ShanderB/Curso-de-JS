@@ -4,17 +4,19 @@ import { useState } from "react";
 import ResultIMC from "./ResultIMC/ResultIMC";
 import styles from "./styleForm";
 export default function Form() {
-    const [height, setHeight] = useState(undefined)
-    const [weight, setWeight] = useState(undefined)
+    const [height, setHeight] = useState(0)
+    const [weight, setWeight] = useState(0)
     const [messageIMC, setMessageIMC] = useState("Preencha o peso e altura")
-    const [imc, setImc] = useState(undefined)
+    const [imc, setImc] = useState(0)
     const [textButton, setTextButton] = useState("Calcular")
+    const [hasError, setHasError] = useState(false)
+
 
 
     function imcCalculator() {
         let localWeight = weight;
         let localHeight = height;
-        return setImc((localWeight/(localHeight*localHeight)));
+        return setImc((localWeight/(localHeight*localHeight)).toFixed(2));
     }
 
     function validator() {
@@ -23,13 +25,13 @@ export default function Form() {
 
         if(localWeight && localHeight){
             imcCalculator();
-            setWeight(undefined);
-            setHeight(undefined);
+            setWeight(0);
+            setHeight(0);
             setMessageIMC("Seu IMC é igual:");
             setTextButton("Calcular Novamente");
             return;
         }
-        setImc(undefined);
+        setImc(0);
         setTextButton("Calcular");
         setMessageIMC("Preencha o peso e a altura")
     }
