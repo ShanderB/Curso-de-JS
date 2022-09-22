@@ -7,7 +7,7 @@ export default function Form() {
     const [height, setHeight] = useState(undefined)
     const [weight, setWeight] = useState(undefined)
     const [messageIMC, setMessageIMC] = useState("Preencha o peso e altura")
-    const [imc, setImc] = useState(undefined)
+    const [imc, setImc] = useState(0)
     const [textButton, setTextButton] = useState("Calcular")
     const [hasError, setHasError] = useState("")
 
@@ -38,7 +38,7 @@ export default function Form() {
             return;
         }
         pageHasError();
-        setImc(undefined);
+        setImc(0);
         setTextButton("Calcular");
         setMessageIMC("Preencha o peso e a altura")
     }

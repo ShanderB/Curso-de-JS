@@ -37,7 +37,7 @@ export default function ResultIMC(props: Propriedades){
 }
 
 export interface Propriedades {
-    result: string;
+    result: number;
     mensagemResultado: string;
     /// ...
 }
