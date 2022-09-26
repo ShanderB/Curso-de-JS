@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TextInput, Vibration, TouchableOpacity, Keyboard, Pressable} from "react-native";
+import { View, Text, TextInput, Vibration, TouchableOpacity, Keyboard, Pressable, FlatList} from "react-native";
 import { useState } from "react";
 import ResultIMC from "./ResultIMC/ResultIMC";
 import styles from "./styleForm";
@@ -10,6 +10,7 @@ export default function Form() {
     const [imc, setImc] = useState(0)
     const [textButton, setTextButton] = useState("Calcular")
     const [hasError, setHasError] = useState("")
+    const [imcList, setImcList] = useState([])
 
     function pageHasError() {
         if(!imc){
@@ -21,7 +22,9 @@ export default function Form() {
     function imcCalculator() {
         let localWeight = weight;
         let localHeight = height;
-        return setImc((localWeight/(localHeight*localHeight)).toFixed(2));
+        let total: number = (localWeight/(localHeight*localHeight)).toFixed(2);
+        setImcList((arr) => [...arr, {id: new Date().getTime(), imc: total}]);
+        setImc(total)
     }
 
     function validator() {
@@ -44,8 +47,9 @@ export default function Form() {
     }
     
     return (
-        <Pressable onPress={Keyboard.dismiss} style={styles.formContext}>
-            <View style={styles.form}>
+            <View style={styles.formContext}>
+                {imc == 0 ? 
+        <Pressable  style={styles.form}>
                 <Text style={styles.formLabel}>Altura</Text>
                 <Text style={styles.errorMessage}>{hasError}</Text>
                 <TextInput
@@ -69,8 +73,39 @@ export default function Form() {
                 >
                     <Text style={styles.buttonCalculatorText}>{textButton}</Text>
                 </TouchableOpacity>
-            </View>
-            <ResultIMC mensagemResultado={messageIMC} result={imc}></ResultIMC>
         </Pressable>
+        : 
+        <View>
+            <ResultIMC mensagemResultado={messageIMC} result={imc}></ResultIMC>
+            <TouchableOpacity style={styles.buttonCalculator}
+                onPress={() => validator()}
+                >
+                    <Text style={styles.buttonCalculatorText}>{textButton}</Text>
+                </TouchableOpacity>
+        </View>
+        }
+        <FlatList style={{
+            height: 58,
+            width: '100%',
+            paddingRight: 20
+             }}
+        data={imcList.reverse()}
+        renderItem={({item}) => {
+            return (
+                <Text>
+                    <Text>
+                        Resultado
+                    </Text>
+                    {item.imc}
+                </Text>
+            )
+        }}
+        keyExtractor={(item) => {
+            item.id
+        }}
+        >
+            
+        </FlatList>
+            </View>
     )
 }
