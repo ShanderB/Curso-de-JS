@@ -1,12 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import Contacts from './src/Pages/Contacts/Contacts'
+import Information from './src/Pages/Information/Information'
+import AppContacts from './src/Pages/AppContacts/AppContacts';
+
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function Tabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="AppContacts" component={AppContacts}></Tab.Screen>
+      <Tab.Screen name="Contacts" component={Contacts}></Tab.Screen>
+    </Tab.Navigator>
+  )
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="AppContacts" component={Tabs}></Stack.Screen>
+        <Stack.Screen name="Information" component={Information}></Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
