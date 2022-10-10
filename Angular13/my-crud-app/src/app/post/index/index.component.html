@@ -13,11 +13,11 @@
       <tr *ngFor="let post of posts">
         <td>{{ post.id }}</td>
         <td>{{ post.title }}</td>
-        <td>{{ post.body }}</td>
-        <td>
+        <td class="lines">{{ post.body }}</td>
+        <td class="button-action">
           <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info">View</a>
           <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary">Edit</a>
-          <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
+          <a type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</a>
         </td>
       </tr>
     </table>
