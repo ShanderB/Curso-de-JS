@@ -6,7 +6,7 @@ import { Post } from '../post';
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
-  styleUrls: ['./view.component.css']
+  styleUrls: ['./view.component.less']
 })
 export class ViewComponent implements OnInit {
       
