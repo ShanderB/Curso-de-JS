@@ -30,6 +30,11 @@ export class ViewComponent implements OnInit {
    * @return response()
    */
   ngOnInit(): void {
+    this.post = {
+      id: 0,
+      title: "",
+      body: ""
+    }
     this.id = this.route.snapshot.params['postId'];
          
     this.postService.find(this.id).subscribe((data: Post)=>{
